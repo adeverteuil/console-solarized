@@ -41,14 +41,14 @@ Installing
    You should edit ``solarized.conf`` if you wish to use the light theme.
    The dark theme is enabled by default.
 
-   ================================  ====================================  ====
-   File list                         Location to copy to                   Edit
-   ================================  ====================================  ====
-   console-solarized                 /usr/local/bin
-   console-solarized-dark@.service   /etc/systemd/system
-   console-solarized-light@.service  /etc/systemd/system
-   solarized.conf                    /etc/systemd/system/getty@.service.d  yes
-   ================================  ====================================  ====
+   ================================  =====================================  ====
+   File list                         Location to copy to                    Edit
+   ================================  =====================================  ====
+   console-solarized                 /usr/local/bin/
+   console-solarized-dark@.service   /etc/systemd/system/
+   console-solarized-light@.service  /etc/systemd/system/
+   solarized.conf                    /etc/systemd/system/getty@.service.d/  yes
+   ================================  =====================================  ====
 
 2. Run ``systemctl daemon-reload`` as root to make systemd reload the
    configuration files.
