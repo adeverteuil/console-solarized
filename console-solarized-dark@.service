@@ -19,7 +19,7 @@ After=getty@%i.service
 
 [Service]
 Type=oneshot
-ExecStart=/usr/local/bin/console_solarized
+ExecStart=/usr/local/bin/console-solarized
 StandardOutput=tty
 TTYPath=/dev/%i
 TTYVTDisallocate=yes
