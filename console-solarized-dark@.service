@@ -1,0 +1,28 @@
+# Solarized Linux console colorscheme
+# Systemd unit to apply dark solarized theme to a tty.
+#
+# Author: Alexandre de Verteuil
+# Date: 2013-09-21
+# URL: https://github.com/adeverteuil/console-solarized
+# Main Solarized project URL: http://ethanschoonover.com/solarized
+#
+# This file should be placed in "/etc/systemd/system".
+# There is no need to enable it with "systemctl enable".
+# Placing "solarized.conf" in "/etc/systemd/system/getty@.service.d"
+# will add a Wants directive to all instantiated getty@.service units.
+
+[Unit]
+Description=Solarized color palette for the Linux console (dark theme)
+Documentation=https://github.com/adeverteuil/console-solarized
+Documentation=http://ethanschoonover.com/solarized
+After=getty@%i.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/console_solarized
+StandardOutput=tty
+TTYPath=/dev/%i
+TTYVTDisallocate=yes
+
+[Install]
+WantedBy=getty@%i.service
