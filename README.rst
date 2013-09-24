@@ -29,6 +29,27 @@ applications.
 Installing
 ==========
 
+Method 1: ``/etc/issue``
+------------------------
+
+1. Move ``/etc/issue`` to ``/etc/issue.backup``.
+2. Write the output of ``console-solarized`` to ``/etc/issue``::
+
+    # console-solarized > /etc/issue
+
+   You may get better results if you put the clear screen escape sequences first::
+
+    # clear > /etc/issue
+    # console-solarized >> /etc/issue
+    # cat /etc/issue.backup >> /etc/issue
+
+``console-solarized`` sends console escape sequences to stdout. By default, the output changes the color palette to Solarized dark. For Solarized light, add the "``light``" command line parameter::
+
+    # console-solarized light >> /etc/issue
+
+Method 2: systemd unit
+----------------------
+
 .. Note::
 
     This installation procedure is for a systemd_ managed Linux
@@ -52,6 +73,8 @@ Installing
 
 2. Run ``systemctl daemon-reload`` as root to make systemd reload the
    configuration files.
+
+**Bug**: It should be written in C.
 
 Contributing
 ============
