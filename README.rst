@@ -59,17 +59,17 @@ Method 2: systemd unit
 .. _ArchLinux: https://www.archlinux.org/
 
 1. Copy the source files to the directories indicated by the following table.
-   You should edit ``solarized.conf`` if you wish to use the light theme.
+   You should edit ``console-solarized.conf`` if you wish to use the light theme.
    The dark theme is enabled by default.
 
-   ================================  =====================================  ====
-   File list                         Location to copy to                    Edit
-   ================================  =====================================  ====
-   console-solarized                 /usr/local/bin/
-   console-solarized-dark@.service   /etc/systemd/system/
-   console-solarized-light@.service  /etc/systemd/system/
-   solarized.conf                    /etc/systemd/system/getty@.service.d/  yes
-   ================================  =====================================  ====
+   ===========================  =====================================  ====
+   File list                    Location to copy to                    Edit
+   ===========================  =====================================  ====
+   console-solarized            /usr/local/bin/
+   console-solarized@.service   /etc/systemd/system/
+   solarized.conf               /etc/systemd/system/getty@.service.d/
+   console-solarized.conf       /etc/                                  yes
+   ===========================  =====================================  ====
 
 2. Run ``systemctl daemon-reload`` as root to make systemd reload the
    configuration files.

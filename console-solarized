@@ -9,7 +9,7 @@
 # Main Solarized project URL: http://ethanschoonover.com/solarized
 #
 # This file should be placed in the PATH, such as "/usr/local/bin".
-# It will be executed from the console-solarized-{light,dark}@.service unit
+# It will be executed from the console-solarized@.service unit
 # when a getty@.service unit is instantiated.
 #
 # See man 4 console_codes for more information.
