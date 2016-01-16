@@ -35,17 +35,13 @@ Method 1: ``/etc/issue``
 1. Move ``/etc/issue`` to ``/etc/issue.backup``.
 2. Write the output of ``console-solarized`` to ``/etc/issue``::
 
-    # console-solarized > /etc/issue
+    # console-solarized [dark|light] > /etc/issue
 
    You may get better results if you put the clear screen escape sequences first::
 
     # clear > /etc/issue
-    # console-solarized >> /etc/issue
+    # console-solarized [dark|light] >> /etc/issue
     # cat /etc/issue.backup >> /etc/issue
-
-``console-solarized`` sends console escape sequences to stdout. By default, the output changes the color palette to Solarized dark. For Solarized light, add the "``light``" command line parameter::
-
-    # console-solarized light >> /etc/issue
 
 Method 2: systemd unit
 ----------------------
@@ -59,22 +55,45 @@ Method 2: systemd unit
 .. _ArchLinux: https://www.archlinux.org/
 
 1. Copy the source files to the directories indicated by the following table.
-   You should edit ``console-solarized.conf`` if you wish to use the light theme.
+   You should edit ``/etc/console-solarized.conf`` if you wish to use the light theme.
    The dark theme is enabled by default.
 
    ===========================  =====================================  ====
    File list                    Location to copy to                    Edit
    ===========================  =====================================  ====
    console-solarized            /usr/local/bin/
+   console-solarized.conf       /etc/                                  yes
    console-solarized@.service   /etc/systemd/system/
    solarized.conf               /etc/systemd/system/getty@.service.d/
-   console-solarized.conf       /etc/                                  yes
    ===========================  =====================================  ====
 
 2. Run ``systemctl daemon-reload`` as root to make systemd reload the
    configuration files.
 
 **Bug**: It should be written in C.
+
+Choosing theme
+==============
+
+``console-solarized`` will prioritize the argument for setting the theme.
+If no argument is provided, ``/etc/console-solarized.conf`` is used.
+
+Method 1: first argument
+------------------------
+
+Set Solarized dark::
+
+    $ console-solarized dark
+
+or Solarized light::
+
+    $ console-solarized light
+
+Method 2: ``/etc/console-solarized.conf``
+-----------------------------------------
+
+1. Copy ``console-solarized.conf`` to ``/etc/console-solarized.conf``.
+2. Configure to your taste.
 
 Contributing
 ============

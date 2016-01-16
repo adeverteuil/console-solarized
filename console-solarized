@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/bin/sh
 #
 # Solarized color scheme for the Linux console
 # Executable script to send the required escape sequences to the terminal.
@@ -27,31 +27,52 @@ S_blue="268bd2"
 S_cyan="2aa198"
 S_green="859900"
 
-if [ "$1x" == "lightx" ]; then
-
-    # Light
-
-    S_base03="fdf6e3"
-    S_base02="eee8d5"
-    S_base01="93a1a1"
-    S_base00="839496"
-    S_base0="657b83"
-    S_base1="586e75"
-    S_base2="073642"
-    S_base3="002b36"
-else
-
-    # Dark
-
-    S_base03="002b36"
-    S_base02="073642"
-    S_base01="586e75"
-    S_base00="657b83"
-    S_base0="839496"
-    S_base1="93a1a1"
-    S_base2="eee8d5"
-    S_base3="fdf6e3"
+if [ -n "$1" ]; then
+	conf=$1
+elif [ -f /etc/console-solarized.conf ]; then
+	. /etc/console-solarized.conf
+	conf=$THEME
 fi
+
+case "$conf" in
+    light)
+
+        # Light
+
+        S_base03="fdf6e3"
+        S_base02="eee8d5"
+        S_base01="93a1a1"
+        S_base00="839496"
+        S_base0="657b83"
+        S_base1="586e75"
+        S_base2="073642"
+        S_base3="002b36"
+
+	;;
+
+    dark)
+
+        # Dark
+
+        S_base03="002b36"
+        S_base02="073642"
+        S_base01="586e75"
+        S_base00="657b83"
+        S_base0="839496"
+        S_base1="93a1a1"
+        S_base2="eee8d5"
+        S_base3="fdf6e3"
+
+	;;
+
+    *)
+
+        # invalid configuration
+
+        exit 1
+
+	;;
+esac
 
 echo -en "\e]P0$S_base02"   # Black
 echo -en "\e]P1$S_red"      # Red
