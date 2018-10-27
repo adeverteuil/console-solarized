@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/bin/sh
 #
 # Solarized color scheme for the Linux console
 # Executable script to send the required escape sequences to the terminal.
@@ -16,6 +16,10 @@
 
 TERM=linux
 
+echo() {
+  env echo $*
+}
+
 # Common
 
 S_yellow="b58900"
@@ -27,7 +31,7 @@ S_blue="268bd2"
 S_cyan="2aa198"
 S_green="859900"
 
-if [ "$1x" == "lightx" ]; then
+if [ "$1x" = "lightx" ]; then
 
     # Light
 
