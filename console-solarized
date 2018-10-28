@@ -65,22 +65,22 @@ else
     S_rebase3="$S_base3"
 fi
 
-echo -en "\e]P0$S_rebase02" # Black
-echo -en "\e]P1$S_red"      # Red
-echo -en "\e]P2$S_green"    # Green
-echo -en "\e]P3$S_yellow"   # Brown
-echo -en "\e]P4$S_blue"     # Blue
-echo -en "\e]P5$S_magenta"  # Magenta
-echo -en "\e]P6$S_cyan"     # Cyan
-echo -en "\e]P7$S_rebase2"  # White
-echo -en "\e]P8$S_rebase03"
-echo -en "\e]P9$S_orange"
-echo -en "\e]Pa$S_rebase01"
-echo -en "\e]Pb$S_rebase00"
-echo -en "\e]Pc$S_rebase0"
-echo -en "\e]Pd$S_violet"
-echo -en "\e]Pe$S_rebase1"
-echo -en "\e]Pf$S_rebase3"
+printf "\033]P0$S_rebase02" # Black
+printf "\033]P1$S_red"      # Red
+printf "\033]P2$S_green"    # Green
+printf "\033]P3$S_yellow"   # Brown
+printf "\033]P4$S_blue"     # Blue
+printf "\033]P5$S_magenta"  # Magenta
+printf "\033]P6$S_cyan"     # Cyan
+printf "\033]P7$S_rebase2"  # White
+printf "\033]P8$S_rebase03"
+printf "\033]P9$S_orange"
+printf "\033]Pa$S_rebase01"
+printf "\033]Pb$S_rebase00"
+printf "\033]Pc$S_rebase0"
+printf "\033]Pd$S_violet"
+printf "\033]Pe$S_rebase1"
+printf "\033]Pf$S_rebase3"
 
 # SOLARIZED HEX     16/8 TERMCOL  XTERM/HEX   L*A*B      RGB         HSB
 # --------- ------- ---- -------  ----------- ---------- ----------- -----------
