@@ -1,5 +1,5 @@
 # Solarized Linux console colorscheme
-# Systemd unit to apply dark solarized theme to a tty.
+# Systemd unit to apply Solarized theme to a tty.
 #
 # Author: Alexandre de Verteuil
 # Date: 2013-09-21
@@ -12,7 +12,7 @@
 # will add a Wants directive to all instantiated getty@.service units.
 
 [Unit]
-Description=Solarized color palette for the Linux console (dark theme)
+Description=Solarized color palette for the Linux console
 Documentation=https://github.com/adeverteuil/console-solarized
 Documentation=http://ethanschoonover.com/solarized
 After=getty@%i.service
