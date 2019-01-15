@@ -70,6 +70,18 @@ Method 2: systemd unit
 2. Run ``systemctl daemon-reload`` as root to make systemd reload the
    configuration files.
 
+
+Method 3: dracut module
+-----------------------
+
+Check out documentation for `dracut module`_
+
+.. _dracut module: dracut/99console-solarized/README.md
+
+.. Note::
+    dracut module only applies colors to boot console,
+    you still need method 1 or 2 to apply colors to all consoles.
+
 **Bug**: It should be written in C.
 
 Choosing theme
