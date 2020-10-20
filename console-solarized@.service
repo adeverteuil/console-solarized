@@ -16,6 +16,7 @@ Description=Solarized color palette for the Linux console
 Documentation=https://github.com/adeverteuil/console-solarized
 Documentation=http://ethanschoonover.com/solarized
 After=getty@%i.service
+ConditionPathExists=/dev/%i
 
 [Service]
 Type=oneshot
